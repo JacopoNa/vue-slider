@@ -34,6 +34,24 @@ var app = new Vue(
                     text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
                 }
             ]
+        },
+        methods: {
+            showNextPicture() {
+                if(this.currentCountry < this.slides.length - 1) {
+                    // Incrementa di 1 currentCountry fino all'ultima foto
+                    this.currentCountry++;
+                } else {
+                    this.currentCountry = 0;
+                }
+            },
+            showPreviousPicture() {
+                if(this.currentCountry > 0) {
+                    // Incrementa di 1 currentCountry fino all'ultima foto
+                    this.currentCountry--;
+                } else {
+                    this.currentCountry = this.slides.length - 1;
+                }
+            }
         }
     }
 )

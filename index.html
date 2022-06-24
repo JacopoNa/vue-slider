@@ -28,10 +28,14 @@
                     </div>
     
                     <div class="thumbs">
-                        <div class="prev"></div>
-                        <div class="next"></div>
+                        <!-- richiamo della funzione al click per mostrare l'elemento precedente -->
+                        <div @click="showPreviousPicture" class="prev"></div>
+
+                        <!-- richiamo della funzione al click per mostrare l'elemento successivo -->
+                        <div @click="showNextPicture" class="next"></div>
+
                         <div v-for="(image, currentIndex) in slides" class="thumb" :class="{ 'active': (currentIndex === currentCountry)}">
-                            <img :src="slides[currentCountry].image" :alt="slides[currentCountry].title"/>
+                            <img :src="slides[currentIndex].image" :alt="slides[currentCountry].title"/>
                         </div>
                         <!-- <div class="thumb">
                             <img src="img/02.jpg" alt="Svizzera" />
