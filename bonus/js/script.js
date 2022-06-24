@@ -60,7 +60,15 @@ var app = new Vue(
             // al click su una thumb, si visualizza in grande l'immagine corrispondente
             showCurrentPicture(index) {
                 this.currentCountry = index
+            },
+            
+            // ogni 3 secondi mostra la foto successiva automaticamente
+            start() {
+                this.startPlay = setInterval(this.showNextPicture, 3000);
             }
+        },
+        mounted() {
+            this.start();
         }
     }
 )
