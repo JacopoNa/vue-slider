@@ -65,6 +65,16 @@ var app = new Vue(
             // ogni 3 secondi mostra la foto successiva automaticamente
             start() {
                 this.startPlay = setInterval(this.showNextPicture, 3000);
+            },
+
+            // hover sullo slider, stop autoplay
+            stopAutoplay() {
+                clearInterval(this.startPlay)
+            },
+
+            // hover sullo slider, restart autoplay
+            restartAutoplay() {
+                this.start();
             }
         },
         mounted() {

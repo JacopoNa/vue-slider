@@ -34,7 +34,7 @@
                         <!-- richiamo della funzione al click per mostrare l'elemento successivo -->
                         <div @click="showNextPicture" class="next"></div>
 
-                        <div v-for="(image, currentIndex) in slides" class="thumb" :class="{ 'active': (currentIndex === currentCountry)}">
+                        <div @mouseover="stopAutoplay" @mouseleave="restartAutoplay" v-for="(image, currentIndex) in slides" class="thumb" :class="{ 'active': (currentIndex === currentCountry)}">
                             <img @click="showCurrentPicture(currentIndex)" :src="slides[currentIndex].image" :alt="slides[currentCountry].title"/>
                         </div>
                         <!-- <div class="thumb">
