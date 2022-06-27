@@ -12,6 +12,7 @@ var app = new Vue(
         data: {
             // indice dell'array
             currentCountry: 0,
+            startPlay : null,
             slides: [
                 {
                     image: 'img/01.jpg',
